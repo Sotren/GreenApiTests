@@ -94,9 +94,9 @@
 
 Шаги
 Удалите мокирование:
-- В test_send_message.py и test_get_chat_history.py:
-- Удалите строку: import requests_mock
-- Уберите все блоки with requests_mock.Mocker() as m: и связанные с ними строки m.post(...). Например:
+- В  `test_send_message.py ` и  `test_get_chat_history.py `:
+- Удалите строку:  `import requests_mock `
+- Уберите все блоки c  `requests_mock.Mocker() ` как  и связанные с ними строки  `m.post(...) `. Например:
 -  Было:
  ```bash
 def test_send_message_success(api_client, api_config, valid_chat_id, valid_message):
@@ -118,7 +118,7 @@ def test_send_message_success(api_client, api_config, valid_chat_id, valid_messa
 ### Повторите для всех тестов в обоих файлах.
  
 ### Обработайте тесты с таймаутом:
-- Тесты test_send_message_timeout и test_get_chat_history_timeout зависят от мокирования таймаутов. Удалите их или закомментируйте:
+- Тесты - **`test_send_message_timeout`** и  **`test_get_chat_history_timeout`** зависят от мокирования таймаутов. Удалите их или закомментируйте:
  ```bash
  def test_send_message_timeout(api_client, api_config, valid_chat_id, valid_message):
     payload = {"chatId": valid_chat_id, "message": valid_message}
@@ -126,5 +126,5 @@ def test_send_message_success(api_client, api_config, valid_chat_id, valid_messa
         api_client("send", payload)
 ```
 ### Обновите .env:
-- Убедитесь, что все значения в .env валидны и соответствуют вашему аккаунту GreenAPI. Неверные данные приведут к ошибкам вроде 401 Unauthorized или 429 Too Many Requests.
+- Убедитесь, что все значения в  `.env ` валидны и соответствуют вашему аккаунту  `GreenAPI. ` Неверные данные приведут к ошибкам вроде  `401 Unauthorized ` или  `429 Too Many Requests. `
 - Запустите тесты:
