@@ -127,4 +127,4 @@ def test_send_message_success(api_client, api_config, valid_chat_id, valid_messa
 ```
 ### Обновите .env:
 - Убедитесь, что все значения в  `.env ` валидны и соответствуют вашему аккаунту  `GreenAPI. ` Неверные данные приведут к ошибкам вроде  `401 Unauthorized ` или  `429 Too Many Requests. `
-- Запустите тесты:
+- Запустите тесты.
